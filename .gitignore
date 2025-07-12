@@ -1,0 +1,14 @@
+# Ignore virtual environment
+venv/
+env/
+
+# Ignore environment variables file
+.env
+
+# __pycache__ and Python bytecode
+__pycache__/
+*.py[cod]
+
+# VSCode or PyCharm settings (optional)
+.vscode/
+.idea/
