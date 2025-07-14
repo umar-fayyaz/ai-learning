@@ -1,8 +1,7 @@
 from configuration.config import client
+from typing import List, Dict, Any
 
-
-
-function_def = [
+function_def:List[Dict[str,str]] = [
     {
         "name": "get_weather",
         "description": "Get the current weather in a given location",
@@ -23,7 +22,7 @@ function_def = [
     }
 ]
 
-messages = [
+messages: List[Dict[str,str]] = [
     {"role": "user", "content": "What is ai?"}
 ]
 
@@ -34,7 +33,7 @@ response = client.chat.completions.create(
     function_call="auto",
 )
 
-message = response.choices[0].message
+message: Dict[str, Any] = response.choices[0].message
 print(message)
 
 if message.function_call:

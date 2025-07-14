@@ -1,10 +1,11 @@
 from configuration.config import client
 import json 
+from typing import List, Dict, Any
 
-function_defs = [ 
-    { 
-      "name": "add_numbers", 
-      "description": "Add two numbers and return the result.", 
+function_defs: List[Dict[str, Any]] = [
+    {
+        "name": "add_numbers",
+        "description": "Add two numbers and return the result.",
       "parameters": { 
         "type": "object", 
         "properties": { 
@@ -16,7 +17,7 @@ function_defs = [
     } 
 ] 
 
-messages = [{"role": "user", "content": "What is 26 + 14? Please just give the number."}] 
+messages: List[Dict[str, str]] = [{"role": "user", "content": "What is 26 + 14? Please just give the number."}] 
 
 response = client.chat.completions.create(
     model="gpt-4.1-nano",
@@ -25,12 +26,12 @@ response = client.chat.completions.create(
     function_call="auto"
     )
 
-assistant_message = response.choices[0].message
+assistant_message: Dict[str, Any] = response.choices[0].message
 if assistant_message.function_call:
-    func_name = assistant_message.function_call.name
-    args_json = json.loads(assistant_message.function_call.arguments)
+    func_name:str = assistant_message.function_call.name
+    args_json:str = assistant_message.function_call.arguments
     if func_name == "add_numbers":
-        result = args_json["a"] + args_json["b"]
+        result:int = args_json["a"] + args_json["b"]
         messages.append(assistant_message)
         messages.append({
             "role": "function",
@@ -42,5 +43,5 @@ if assistant_message.function_call:
             model="gpt-4.1-nano",
             messages=messages
         )
-        final_reply = follow_up.choices[0].message.content
+        final_reply:str = follow_up.choices[0].message.content
         print("\nAssistant Final Answer:\n", final_reply)

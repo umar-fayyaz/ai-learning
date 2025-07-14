@@ -2,10 +2,11 @@ from openai import OpenAI, RateLimitError
 from configuration.config import client
 import time
 import sys
+from typing import Any
 
 for attempt in range(5):
     try:
-        response = client.chat.completions.create(
+        response: Any = client.chat.completions.create(
             model="gpt-4.1-nano",
             messages=[{"role": "user", "content": "difference between ai and generative ai"}],
             temperature=0.5,

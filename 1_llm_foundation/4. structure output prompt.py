@@ -1,8 +1,8 @@
 from configuration.config import client
 
 
-user_query = "Weather in Tokyo tomorrow." 
-prompt = f""" 
+user_query:str = "Weather in Tokyo tomorrow." 
+prompt:str = f""" 
 You are a weather bot. Provide a JSON with the weather forecast. 
 The JSON should have two keys: "location" and "forecast". 
 Query: "{user_query}" 

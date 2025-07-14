@@ -1,6 +1,6 @@
 from configuration.config import client
 
-prompt = "Give one creative analogy to explain the concept of artificial intelligence."
+prompt: str = "Give one creative analogy to explain the concept of artificial intelligence."
 
 for temp in [0.0, 1.0]:
     response = client.chat.completions.create(

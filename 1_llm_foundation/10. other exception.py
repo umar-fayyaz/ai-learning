@@ -1,9 +1,9 @@
 from configuration.config import client
 from openai import OpenAI, RateLimitError, Timeout, APIError
-
+from typing import List, Dict, Any, Optional
 import time
 
-def query_gpt(messages, max_retries=3):
+def query_gpt(messages: List[Dict[str, Any]], max_retries: int = 3) -> Optional[Any]:
     for attempt in range(max_retries):
         try:
             response = client.chat.completions.create(
@@ -28,7 +28,7 @@ def query_gpt(messages, max_retries=3):
     raise Exception("Failed to get a response after multiple retries.")
 
 
-messages=[
+messages: List[Dict[str, str]] = [
         {"role": "user", "content": "What's the difference between AI and Generative AI?"}
 ]
 
