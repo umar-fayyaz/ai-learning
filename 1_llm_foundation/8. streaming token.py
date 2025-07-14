@@ -1,4 +1,4 @@
-from config import client
+from configuration.config import client
 import sys
 
 try:

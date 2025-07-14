@@ -1,4 +1,4 @@
-from config import client
+from configuration.config import client
 from openai import OpenAIError
 from typing import Any
 

@@ -1,5 +1,5 @@
 from openai import OpenAI, RateLimitError
-from config import client
+from configuration.config import client
 import time
 import sys
 

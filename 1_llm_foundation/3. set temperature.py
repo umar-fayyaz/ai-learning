@@ -1,4 +1,4 @@
-from config import client
+from configuration.config import client
 
 prompt = "Give one creative analogy to explain the concept of artificial intelligence."
 

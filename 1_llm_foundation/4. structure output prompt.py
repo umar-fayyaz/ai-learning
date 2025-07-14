@@ -1,4 +1,4 @@
-from config import client
+from configuration.config import client
 
 
 user_query = "Weather in Tokyo tomorrow." 
