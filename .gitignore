@@ -1,6 +1,8 @@
 # Ignore virtual environment
 venv/
 env/
+.venv/
+
 
 # Ignore environment variables file
 .env
@@ -12,3 +14,10 @@ __pycache__/
 # VSCode or PyCharm settings (optional)
 .vscode/
 .idea/
+
+# Mypy cache
+.mypy_cache/
+
+.ipynb_checkpoints/
+
+mypy.ini
