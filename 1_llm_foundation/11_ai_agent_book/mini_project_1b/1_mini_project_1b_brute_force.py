@@ -3,7 +3,7 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 # import faiss
 from typing import List, Dict, Any
-import torch
+# import torch
 
 
 corpus:List[str] = [
