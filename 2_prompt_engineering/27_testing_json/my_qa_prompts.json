@@ -1,0 +1,9 @@
+{
+  "QA_Direct": {
+    "user_template": "Context: {context}\n\nQuestion: {question}\n\nAnswer:"
+  },
+  "QA_RolePlay_Expert": {
+    "system": "You are a world-renowned expert in the provided context domain.",
+    "user_template": "Given your deep expertise and the following context: {context}\n\nAnswer this question: {question}"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "variant_A_formal": {
+    "system": "You are a formal summarizer.",
+    "user_template": "Please formally summarize the following text: {input}"
+  },
+  "variant_B_bullet": {
+    "system": "You are a concise summarizer that uses bullet points.",
+    "user_template": "Summarize this text using bullet points: {input}"
+  },
+  "variant_C_casual": {
+    "system": "You are a casual, friendly summarizer.",
+    "user_template": "Hey! Can you break this down in a simple and friendly way? {input}"
+  },
+  "variant_D_translate": {
+    "system": "You are a French translator.",
+    "user_template": "Translate this into French: {input}"
+  }
+}
