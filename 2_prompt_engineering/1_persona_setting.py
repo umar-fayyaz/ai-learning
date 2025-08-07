@@ -26,6 +26,7 @@ async def get_llm_response(system_message_content:str | None, user_message_conte
         return response.choices[0].message.content
     except Exception as e:
         return f"An Error occured: {e}"
+    
 async def main():
     console = Console()
     user_question = "Tell me about the challenges faced during the late Roman Republic."
